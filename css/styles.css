@@ -10566,32 +10566,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#chatwrap {
-  margin: 40px;
-  padding: 20px;
-  border: 2 solid #49668a;
-}
-
-.chatlogin {
-  padding: 20px;
-  margin: 20px;
-  border: 1 solid grey;
-}
-
 .navbar {
   background-color: #49668a;
 }
 
 .facebooklink {
-  color: white;
-}
-
-.chats {
-  text-align: center;
-  vertical-align: middle;
-}
-
-.memberarealabel {
   color: white;
 }
 
@@ -10754,18 +10733,6 @@ input {
   width: 100%;
 }
 
-.sidebar {
-  float: left;
-  width: 20%;
-  height: 80%;
-}
-
-.newmessage {
-  float: center;
-  width: 40%;
-  height: 80%;
-}
-
 .oldContent {
   float: right;
   width: 40%;
@@ -10782,5 +10749,43 @@ input {
 .card:hover {
   -webkit-box-shadow: 0 32px 64px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 32px 64px 0 rgba(0, 0, 0, 0.2);
+}
+
+.headerbrowse {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.favoriteinput {
+  margin-top: 0px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#view_ajax {
+  display: block;
+  overflow: auto;
+  width: 500px;
+  height: 300px;
+  border: 1px solid  #49668a;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+#ajaxForm {
+  display: block;
+  margin: 0 auto;
+  width: 500px;
+  height: 50px;
+  margin-top: 10px;
+}
+
+#chatInput {
+  width: 454px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 /*# sourceMappingURL=styles.css.map */

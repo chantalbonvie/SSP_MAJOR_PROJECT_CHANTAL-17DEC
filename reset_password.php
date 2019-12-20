@@ -4,9 +4,9 @@
 table, th, td {
     
   border: 1px solid black;
-  padding: 50px;
-  margin-left: 80px;
-  margin-top: 30px;
+  padding: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
 }
 
 </style>

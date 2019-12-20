@@ -16,6 +16,7 @@ require_once("conn.php");
 <link href="/css/styles.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
@@ -70,11 +71,11 @@ require_once("conn.php");
           <a class="nav-link dropdown-toggle" 
           href="#" 
           id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        
+          <p class="memberarea">Member Area</p>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Chat</a>
-            <a class="dropdown-item" href="/stamp_images_browse_carousel.php">Browse Our Collection</a>
+            <a class="dropdown-item" href="/stamp_images_browse_carousel.php">Comment or Browse</a>
             <a class="dropdown-item" href="/edit_profile.php">Edit Your Profile</a>
+            <a class="dropdown-item" href="/chat.php">Chat</a>
             <form action="/actions/login.php" method="post">
               <button type="submit" name="action" value="logout">
                   Logout
@@ -84,8 +85,6 @@ require_once("conn.php");
           </div>
         </li>   
       </ul> 
-      <div class="memberarealabel">
-      <p>Member Area</p>
   </div>
   </div>
   <?php endif;?>

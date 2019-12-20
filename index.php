@@ -12,8 +12,8 @@ require_once("header.php");
         if(isset($_SESSION["user_id"])):
             ?>          
             <div class='chip'>
-            <img src="" alt="" text="center" width="96" height="96">
-            <h4> Welcome to The Posting Den</h4><br>
+
+            <h4><br> Welcome to The Posting Den </h4><br>
             <h6>Members - Favorite Stamps and Comments</h6>
 
                 <form action="/actions/edit_user.php" method="POST">
@@ -91,7 +91,8 @@ function make_slides($conn)
                         LEFT JOIN users
                         ON users.id = member_favorite_stamp.member_id
                         LEFT JOIN browse_carousel
-                        ON browse_carousel.id = member_favorite_stamp.stamp_id";
+                        ON browse_carousel.id = member_favorite_stamp.stamp_id
+                        ORDER BY member_favorite_stamp.id DESC" ;
 
 if($result = mysqli_query($conn, $query)){
     echo '<p></p>';
@@ -112,7 +113,6 @@ if($result = mysqli_query($conn, $query)){
                 </div>
             </div>
         </div>
-        <!-- <a href='/memberfavorite.php?stamp_id=".$row["stamp_id"]."'>".$row["stamp_id"].$row["comment"]."</a> -->
 
         <?php
     }
@@ -188,6 +188,7 @@ echo '</div>';
         </div>
     </div>
 </div>
+
 
 <?php
 require_once("footer.php");

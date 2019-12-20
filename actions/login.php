@@ -22,12 +22,16 @@ if( isset($_POST["action"]) && $_POST["action"] == "login") :
            $password = md5($_POST["password"]);
 
         //connect to dababase
-        $query_users = "SELECT * FROM users WHERE email = 
-            '" . $email . "'
-            AND password = '" . $password . "' 
-            LIMIT 1";
+        $query_users = "SELECT * FROM users WHERE email = '" . $email . "' AND password = '" . $password . "' LIMIT 1";
 
         $user_result = mysqli_query($conn,$query_users);
+
+        // echo "<pre>";
+        // echo $query_users;
+        // print_r($user_result);
+        // echo mysqli_num_rows($user_result);
+        // exit;
+
         if ( mysqli_num_rows($user_result) > 0 ) {
             //user found
             while($user = mysqli_fetch_array($user_result)) {

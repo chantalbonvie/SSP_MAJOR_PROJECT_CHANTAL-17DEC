@@ -1,15 +1,15 @@
 <?php
 require_once("header.php");
 
-//print_r($_SESSION);
+//print_r($_SESSION); use for checking 
 
 ?>
 <style>
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 60%;
-  margin: 50px;
+  transition: 0.5s;
+  margin: 20px;
 }
 
 .card:hover {
@@ -17,7 +17,7 @@ require_once("header.php");
 }
 
 .container {
-  padding: 2px 16px;
+  padding: 8px 16px;
 }
 </style>
 
@@ -75,7 +75,9 @@ function make_slides($conn)
   $output .= '
    <img src="'.$row["stamp_image"].'" alt="'.$row["country"].'" />
    <div class="carousel-caption">
-    <h3>'.$row["country"].'</h3>
+
+    <h4>'.$row["id"].'
+  '.$row["country"].'</h4>
    </div>
   </div>
   ';
@@ -84,11 +86,19 @@ function make_slides($conn)
  return $output;
 }
 ?>
-
-<div class="searchstamps">
+<div class="headerbrowse">
   <div class="col-md-12">
-    <div class="card">
-      <img src="<?=$row["stamp_image"]?>" alt="" class="card-img-top">
+    <h4><p>Browse Stamps and Comment Below</p></h4>
+  </div>
+</div>
+<div class="searchstamps">
+<div class="col-md-12">
+  <div class="row">
+<div class = "col-md-1">
+  </div>
+  <div class="col-md-9">
+    <div class="card mx-3">
+
         <div class="card-body">
         <blockquote class="blockquote mb-10">
 
@@ -100,18 +110,37 @@ function make_slides($conn)
                 <?php echo make_slides($conn); ?>
               </div>
               <a class="left_dynamic_slide_show" href="#dynamic_slide_show" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon></span>
+              <span class="carousel-control-prev-icon"></span>
               <span class="sr-only">Previous</span>
               </a>
               <a class="right_dynamic_slide_show" href="#dynamic_slide_show" role="button" data-slide="next">
-              <span class="carousel-control-next-icon></span>
+              <span class="carousel-control-next-icon"></span>
               <span class="sr-only">Next</span>
               </a>
               </a>
-        <footer class="blockquote-footer"></footer>
+        <footer>
       </blockquote>
-    </div>
+
+
+  <form action="/actions/favoritepage.php" method="post">
+    <br>
+
+      <input type="text" name="stamp_id" value="" placeholder="Stamp ID # Only - located bottom of image">
+<br><br>
+      <input type="text" name="comment" value="" placeholder="Your Comment">
+<br>
+
+      <input type="hidden" name="user_id" value="<?php echo $_SESSION["user_id"]?>">
+<br>
+      <input type="submit" class="insome" value="Submit">
+  </form>
   </div>
+  </div>
+  </div>
+
+  </div>
+</div>
+</div>
 </div>
 </div>
 </div>
